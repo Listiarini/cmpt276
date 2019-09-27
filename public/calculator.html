@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="calculator.css">
+        <script type="text/javascript" src="calculator.js" defer></script>
+    </head>
+    
+    <body>
+        <div id="container">
+            
+            <div id="header"></div>
+            <div id="content">
+                <h1>Grade Calculator</h1>
+                <div id="box">
+                    <h3>Activities</h3>
+                    <h5>Give grades to the numeric activities:</h5>
+                    
+                    <table>
+                        <tr id="title">
+                            <th>Name</th>
+                            <th>Short Name</th>
+                            <th>Weight</th>
+                            <th>Grade</th>
+                            <th>Percent</th>
+                        </tr>
+                        <tr>
+                            <td>Activity 1</td>
+                            <td>A1</td>
+                            <td><input type="text" name="weight1" id="w1"></td>
+                            <td><input type="text" name="grade1" id="g1" onkeydown="a()"> / <input type="text" name="total1" id="t1">
+                            </td>
+                            <td><p id="p1"></p></td>
+                        </tr>
+                        <tr>
+                            <td>Activity 2</td>
+                            <td>A2</td>
+                            <td><input type="text" name="weight2" id="w2"></td>
+                            <td><input type="text" name="grade2" id="g2"> / <input type="text" name="total2" id="t2">
+                            </td>
+                            <td><p id="p2"></p></td>
+                        </tr>
+                        <tr>
+                            <td>Activity 3</td>
+                            <td>A3</td>
+                            <td><input type="text" name="weight3" id="w3"></td>
+                            <td><input type="text" name="grade3" id="g3"> / <input type="text" name="total3" id="t3">
+                            </td>
+                            <td><p id="p3"></p></td>
+                        </tr>
+                        <tr>
+                            <td>Activity 4</td>
+                            <td>A4</td>
+                            <td><input type="text" name="weight4" id="w4"></td>
+                            <td><input type="text" name="grade4" id="g4"> / <input type="text" name="total4" id="t4">
+                            </td>
+                            <td><p id="p4"></p></td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Result</h3>
+                    <p id="result"></p>
+                    <button id="mean">MEAN</button>
+                    <button id="weighted">WEIGHTED</button>
+                </div>
+            </div>
+            <div id="footer"></div>
+
+        </div>
+    </body>
+</html>
