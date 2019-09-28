@@ -1,91 +1,107 @@
-body    { background-color: rgb(166, 25, 46);
-          color: rgb(0, 0, 0); 
-          margin-top: 0px;}
+body        { 
+                background-color: rgb(166, 25, 46);
+                color: rgb(0, 0, 0); 
+                margin-top: 0px;
+            }
 
-#container    { background-color: rgb(255, 255, 255);
-          margin-left: auto;
-          margin-right: auto;
-          width: 85%;
-          min-width: 800px;
-          box-shadow: 0px 0px 15px rgba(50, 50, 50, 0.75);
-          
-}
+#container  { 
+                background-color: rgb(255, 255, 255);
+                margin-left: auto;
+                margin-right: auto;
+                width: 85%;
+                min-width: 800px;
+                box-shadow: 0px 0px 15px rgba(50, 50, 50, 0.75);
+            }
 
-#header { background-color: rgb(61, 57, 53);
-          width: 100%;
-          height: 25px;
-}
-#footer { background-color: rgb(61, 57, 53);
-          width: 100%;
-          height: 45px;
-    
-}
-#content    { padding-top: 40px;
-          padding-left: 20px;
-          padding-bottom: 20px;
-    
-}
-h1      { font-family: DINWebMedium, sans-serif; 
-          color: rgb(0, 0, 0);}
+#header     {   
+                background-color: rgb(61, 57, 53);
+                width: 100%;
+                height: 25px;
+            }
 
-#box    { background-color: rgb(238, 238, 238);
-          border: 1px solid rgb(187, 187, 187);
-          width: 80%;
-          min-height: 400px;
-          padding: 20px;
-          overflow: auto;
-}
+#footer     {   
+                background-color: rgb(61, 57, 53);
+                width: 100%;
+                height: 45px;
+            }
 
-h3      { font-family: Cambria, Georgia, "Times New Roman", serif; 
-          color: rgb(166, 25, 46);}
+#content    {   
+                padding-top: 40px;
+                padding-left: 20px;
+                padding-bottom: 20px;
+            }
 
-h5      { font-family: Cambria, Georgia, "Times New Roman", serif; 
-          color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 400;}
-table, th, td   {
-            border: 1px solid rgb(187, 187, 187);
-            border-collapse: collapse;
-            padding-bottom: 4px;
-}
-th  {
-            
-            margin: 0px;
-            background-color: rgb(210, 210, 210);
-            padding: 4px 8px;
-            width: 160px;
-            font-family: Cambria, Georgia, "Times New Roman", serif; 
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 700;
-            text-align: left;
-}
+h1          {   
+                font-family: DINWebMedium, sans-serif; 
+                color: rgb(0, 0, 0);
+            }
 
-td  { 
-      padding-left: 5px;
-    font-family: Cambria, Georgia, "Times New Roman", serif; 
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 400;
-            text-align: left;
-    
-}
-input { width: 80px;
-        height: 25px;
-        margin-top: 5px;
-        }
+#box        {   
+                background-color: rgb(238, 238, 238);
+                border: 1px solid rgb(187, 187, 187);
+                width: 80%;
+                min-height: 400px;
+                padding: 20px;
+                overflow: auto;
+            }
 
-button {
-    float: right;
-    background-color: rgb(166, 25, 46);
-    border: none;
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    margin: 4px;
-    padding: 4px 4px;
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    font-family:DINWebMedium, sans-serif;
-    font-size: 15px;
-}
+h3          {   
+                font-family: Cambria, Georgia, "Times New Roman", serif; 
+                color: rgb(166, 25, 46);
+            }
+
+h5          {   font-family: Cambria, Georgia, "Times New Roman", serif; 
+                color: rgb(0, 0, 0);
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+table, th, td {
+                border: 1px solid rgb(187, 187, 187);
+                border-collapse: collapse;
+                padding-bottom: 4px;
+            }
+
+table       {   margin-bottom: 4px; }
+
+th          {
+                margin: 0px;
+                background-color: rgb(210, 210, 210);
+                padding: 4px 8px;
+                width: 160px;
+                font-family: Cambria, Georgia, "Times New Roman", serif; 
+                color: rgb(0, 0, 0);
+                font-size: 16px;
+                font-weight: 700;
+                text-align: left;
+            }
+
+td          { 
+                padding-left: 5px;
+                font-family: Cambria, Georgia, "Times New Roman", serif; 
+                color: rgb(0, 0, 0);
+                font-size: 16px;
+                font-weight: 400;
+                text-align: left;
+            }
+
+input       { 
+                width: 80px;
+                height: 25px;
+                margin-top: 5px;
+            }
+
+button      {
+                float: right;
+                background-color: rgb(166, 25, 46);
+                border: none;
+                border-radius: 5px;
+                color: rgb(255, 255, 255);
+                margin: 4px;
+                padding: 4px 4px;
+                width: 100px;
+                height: 30px;
+                text-align: center;
+                font-family:DINWebMedium, sans-serif;
+                font-size: 15px;
+            }

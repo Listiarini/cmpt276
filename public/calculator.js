@@ -2,6 +2,7 @@ window.onload = function() {
     var capacity = 4;
     var gradeDec = [0, 0, 0, 0];
     var weightNum = [0, 0, 0, 0];
+    var resultNum = -1; // not yet calculated
     
     var weightArr = [0, 0, 0, 0];
     var gradeArr = [0, 0, 0, 0];
@@ -28,10 +29,12 @@ window.onload = function() {
     totalArr[3] = document.getElementById("t4");
     percentArr[3] = document.getElementById("p4");
     
-
+    var reset = document.getElementById("reset");
     var mean = document.getElementById("mean");
     var weighted = document.getElementById("weighted");
     var result = document.getElementById("result");
+    var calculate = document.getElementById("calculate");
+    var grade = document.getElementById("grade");
  
     
     function checkGradeComplete(grade, total) {
@@ -55,7 +58,7 @@ window.onload = function() {
         }
     }
     
-    function checkGradeValid(grade, total) {
+    function checkGradeValid(grade, total) {   
         if(isNaN(grade) || isNaN(total)) {
             alert("Input of grade must be a positive number");
             return false;
@@ -110,8 +113,8 @@ window.onload = function() {
     function insertWeightValid(weight, i) {
         if (weight!="") {
             if (checkWeightValid(weight)) {
-                weightNum[i] = weight;
-                return parseInt(weightNum[i],10);
+                weightNum[i] = parseInt(weight, 10);
+                return weightNum[i];
             }
             else {
                 weightNum[i] = 0;
@@ -125,7 +128,10 @@ window.onload = function() {
     }
     
     function updatePercentage(grade, total, out) {
-        if (grade == "") {
+        if (grade=="" && total=="") {
+            out.innerHTML = "";
+        }
+        else if (grade == "") {
             out.innerHTML = "type the given grade";
         }
         else if (total == "") {
@@ -133,8 +139,9 @@ window.onload = function() {
         }
         else {
             if (checkGradeValid(grade, total)) {
-                var p = (grade/total).toFixed(4);
-                out.innerHTML = p*100 + "%";    
+                var p = (grade/total);
+                p = +(p*100).toFixed(4); //accurate up to 4 digits decimal and drop unnecessary zero
+                out.innerHTML = p + "%";    
             }
         }
     }
@@ -171,7 +178,9 @@ window.onload = function() {
                 }
                 else {
                     m = (gradeDec[0] + gradeDec[1] + gradeDec[2] + gradeDec[3])/activity;
-                    result.innerHTML = (m.toFixed(2))*100 + " / 100";    
+                    m = +(m*100).toFixed(4); //accurate up to 4 digits decimal and drop unnecessary zero
+                    resultNum = m;
+                    result.innerHTML = m + " / 100";    
                 }
             }
         }
@@ -210,8 +219,9 @@ window.onload = function() {
                 }
                 else {
                     w = (gradeDec[0]*weightNum[0] + gradeDec[1]*weightNum[1] + gradeDec[2]*weightNum[2] + gradeDec[3]*weightNum[3])/totalWeight;
-                    w = w.toFixed(4);
-                    result.innerHTML = w*100 + " / 100";
+                    w = +(w*100).toFixed(4); //accurate up to 4 digits decimal and drop unnecessary zero
+                    resultNum = w;
+                    result.innerHTML = w + " / 100";
                 }
             }
             
@@ -241,5 +251,63 @@ window.onload = function() {
     });
     totalArr[3].addEventListener("keyup", function() {
         updatePercentage(gradeArr[3].value, totalArr[3].value, percentArr[3]);
+    });
+    
+    
+    reset.addEventListener("click", function () {
+       for (var i=0; i<capacity; i++) {
+           weightArr[i].value = "";
+           gradeArr[i].value = "";
+           totalArr[i].value = "";
+           percentArr[i].innerHTML = "";
+           
+           gradeDec[i] = 0;
+           weightNum[i] = 0;
+       }
+        resultNum = -1; //reset into not yet calculated
+        result.innerHTML = "<br>";
+        grade.innerHTML = "<br>";
+    });
+    
+    calculate.addEventListener("click", function() {
+        if (resultNum==-1) {
+            alert("Please calculate weighted or mean result first.");
+        }
+        else {
+            
+            if (resultNum>=92) {
+                grade.innerHTML = "A+";
+            }
+            else if (resultNum>=87) {
+                grade.innerHTML = "A";
+            }
+            else if (resultNum>=82) {
+                grade.innerHTML = "A-";
+            }
+            else if (resultNum>=78) {
+                grade.innerHTML = "B+";
+            }
+            else if (resultNum>=74) {
+                grade.innerHTML = "B";
+            }
+            else if (resultNum>=70) {
+                grade.innerHTML = "B-";
+            }
+            else if (resultNum>=65) {
+                grade.innerHTML = "C+";
+            }
+            else if (resultNum>=60) {
+                grade.innerHTML = "C";
+            }
+            else if (resultNum>=55) {
+                grade.innerHTML = "C-";
+            }
+            else if (resultNum>=50) {
+                grade.innerHTML = "D";
+            }
+            else {
+                grade.innerHTML = "F";
+            }
+        }
     });
 }
